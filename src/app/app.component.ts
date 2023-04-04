@@ -10,11 +10,11 @@ import { Component, OnInit } from '@angular/core';
     <!-- {{message.length}} -->
     <!-- {{message.length  > 12}} -->
     <!-- {{message.length ? message: 'Nothing here....'}} -->
+    
+    <h1 (click)="handleClick($event)">{{newMessage}}</h1>
 
 
-    <h1 [innerText]="message.length ? message: 'Nothing here....'"></h1>
-  
-    <input [value]="message">
+    <input [value]="message" (input)="handleInput($event)">
   </div>
   `,
   styles: [
@@ -30,11 +30,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   message!: string;
+  newMessage!: string;
 
   constructor() { }
 
   ngOnInit() {
     this.message = 'Hello world';
     console.log('Hello Angular!');
+  }
+
+  handleClick(event: Event) {
+    console.log(event);
+  }
+  handleInput(event: Event) {
+    const { value } = event.target as HTMLInputElement;
+    this.newMessage = value;
   }
 }
