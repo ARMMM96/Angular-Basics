@@ -9,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
     <!-- {{message === "Hello world"}} -->
     <!-- {{message.length}} -->
     <!-- {{message.length  > 12}} -->
-    {{message.length ? message: 'Nothing here....'}}
+    <!-- {{message.length ? message: 'Nothing here....'}} -->
+
+
+    <h1 [innerText]="message.length ? message: 'Nothing here....'"></h1>
+  
+    <input [value]="message">
   </div>
   `,
   styles: [
@@ -29,7 +34,7 @@ export class AppComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.message = '';
+    this.message = 'Hello world';
     console.log('Hello Angular!');
   }
 }
