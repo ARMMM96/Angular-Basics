@@ -11,10 +11,12 @@ import { Component, OnInit } from '@angular/core';
     <!-- {{message.length  > 12}} -->
     <!-- {{message.length ? message: 'Nothing here....'}} -->
     
-    <h1 (click)="handleClick($event)">{{newMessage}}</h1>
+    <h1 (click)="handleClick($event)" #heading>{{newMessage}}</h1>
 
 
-    <input [value]="message" (input)="handleInput($event)">
+    <input [value]="message" (input)="newMessage = messageInput.value" #messageInput>
+
+    <p>{{heading.innerText}}</p>
   </div>
   `,
   styles: [
@@ -42,8 +44,5 @@ export class AppComponent implements OnInit {
   handleClick(event: Event) {
     console.log(event);
   }
-  handleInput(event: Event) {
-    const { value } = event.target as HTMLInputElement;
-    this.newMessage = value;
-  }
+
 }
