@@ -4,19 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-root',
   template: `
   <div class="app">
-    <!-- {{message}} -->
-    <!-- {{message === "Hello world!"}}  -->
-    <!-- {{message === "Hello world"}} -->
-    <!-- {{message.length}} -->
-    <!-- {{message.length  > 12}} -->
-    <!-- {{message.length ? message: 'Nothing here....'}} -->
-    
-    <h1 (click)="handleClick($event)" #heading>{{newMessage}}</h1>
-
-
-    <input [value]="message" (input)="newMessage = messageInput.value" #messageInput>
-
-    <p>{{heading.innerText}}</p>
+    <app-donut-list></app-donut-list>
   </div>
   `,
   styles: [
