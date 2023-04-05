@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+
+import { Donut } from '../../models/donut.model';
+
+
 @Component({
   selector: 'app-donut-list',
   template: `
@@ -15,7 +19,7 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class DonutListComponent implements OnInit {
-  donut!: any;
+  donut!: Donut;
   donuts!: any[];
 
   constructor() { }
