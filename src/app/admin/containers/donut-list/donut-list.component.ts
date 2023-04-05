@@ -8,11 +8,8 @@ import { Donut } from '../../models/donut.model';
   selector: 'app-donut-list',
   template: `
     <div>
-      <div>
-        <!-- {{donut | json}} -->
-        {{donut.name}}
-        {{donut.price | currency}}
-      </div>
+      <app-donut-card></app-donut-card>
+
     </div>
   `,
   styles: [
@@ -49,7 +46,7 @@ export class DonutListComponent implements OnInit {
       }
     ];
 
-    this.donut = this.donuts[0];
+    this.donut = this.donuts[1];
   }
 
 }
