@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Donut } from '../../models/donut.model';
 
 @Component({
   selector: 'app-donut-card',
   template: `
-      <div class="donut-card">
+    <div class="donut-card">
         <img 
         src="/assets/img/{{donut.icon}}.svg" 
         [alt]="donut.name"
@@ -16,16 +17,16 @@ import { Component, OnInit } from '@angular/core';
             {{donut.price | currency}}
           </p>
         </div>
-      </div>
+      </div> 
   `,
   styles: [
   ]
 })
-export class DonutCardComponent implements OnInit {
+export class DonutCardComponent  {
+
+  @Input() donut!: Donut;
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
 
 }
