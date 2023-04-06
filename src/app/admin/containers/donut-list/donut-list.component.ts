@@ -13,8 +13,23 @@ import { Donut } from '../../models/donut.model';
           *ngFor="let donut of donuts"
         [donut]="donut"
         ></app-donut-card>
-
+      
+        <div *ngFor="
+                      let donut of donuts; 
+                      trackById: trackById; 
+                      index as i ; 
+                      odd as o; 
+                      even as e "
+                      [style.color]="e ? 'red' : 'blue'"
+              > 
+              {{ i + 1 }}
+              {{ o }}
+              {{ e }}
+        </div>
+      
+      
       </ng-container> 
+
 
       <ng-template #nothing>
         <p>No Donuts here...</p>
