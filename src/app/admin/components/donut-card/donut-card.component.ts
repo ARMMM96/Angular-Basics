@@ -4,9 +4,11 @@ import { Donut } from '../../models/donut.model';
 @Component({
   selector: 'app-donut-card',
   template: `
-       <div class="donut-card" 
-       [class.donut-card-promo]="donut.promo"
-       [class.donut-card-new]="true">
+       <div 
+       class="donut-card" 
+       [ngClass]="{
+          'donut-card-promo': donut.promo
+      }">
        <img 
         src="/assets/img/{{donut.icon}}.svg" 
         [alt]="donut.name"
