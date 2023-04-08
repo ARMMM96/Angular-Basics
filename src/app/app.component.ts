@@ -5,9 +5,9 @@ import { Component, OnInit } from '@angular/core';
   template: `
   <div class="app">
     <header class="header">
-      <img src="/assets/img/logo.svg" alt="Ultimate Donuts" class="logo">
+      <img src="/assets/img/logo.svg" alt="Ultimate Donuts" class="logo"/>
     </header>
-    <app-donut-list></app-donut-list>
+    <donut-list></donut-list>
   </div>
   `,
   styles: [
@@ -15,6 +15,7 @@ import { Component, OnInit } from '@angular/core';
       .app {
         background:#fff;
         border-radius: 8px;
+        max-width: 400px;
         width: 94%;
         margin: 25px auto;
         padding: 25px ;
@@ -36,11 +37,11 @@ export class AppComponent implements OnInit {
   message!: string;
   newMessage!: string;
 
-  constructor() { }
+
 
   ngOnInit() {
-    this.message = 'Hello world';
-    console.log('Hello Angular!');
+    this.message = 'Hello World';
+
   }
 
   handleClick(event: Event) {

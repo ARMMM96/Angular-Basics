@@ -2,20 +2,29 @@ import { Component, Input } from '@angular/core';
 import { Donut } from '../../models/donut.model';
 
 @Component({
-  selector: 'app-donut-card',
+  selector: 'donut-card',
   template: `
        <div 
        class="donut-card" 
        [ngClass]="{
-          'donut-card-promo': donut.promo
+          'donut-card-promo': donut.promo === 'new' || donut.promo === 'limited'
       }">
        <img 
         src="/assets/img/{{donut.icon}}.svg" 
         [alt]="donut.name"
-        class="donut-card-icon">
+        class="donut-card-icon" 
+        />
         <div>
           <p class="donut-card-name">
             {{donut.name}}
+            <ng-container [ngSwitch]="donut.promo"> 
+              <span *ngSwitchCase=" 'new' " class="donut-card-label">NEW</span>
+              <span *ngSwitchCase=" 'limited' " class="donut-card-label"  style="color:orange; border-color:orange;">LIMITED</span>
+              <span *ngSwitchDefault class="donut-card-label" style="color:#007072; border-color:#007072;">
+                Nothing spechial...
+              </span>
+            </ng-container>
+          
           </p>
           <p class="donut-card-price">
             {{donut.price / 100  | currency:'USD': 'symbol'}}
@@ -36,10 +45,20 @@ import { Donut } from '../../models/donut.model';
       &:hover{
         transform: translateY(-3px);
       }
-        
+      &-promo{
+        border: 2px solid #eee;
+      }
       &-name{
         font-size: 16px;
       }
+      &-label {
+          border: 1px solid #c14583;
+          border-radius: 4px;
+          padding: 0 4px;
+          margin-left: 5px;
+          font-size: 12px;
+          color: #c14583;
+        }
       &-price{
         font-size: 14px;
         color: #c14583;
@@ -48,9 +67,7 @@ import { Donut } from '../../models/donut.model';
         width: 50px; 
         margin-right: 10px;
       }
-      &-promo{
-        border: 2px solid #eee;
-      }
+     
     }  
     `
   ]
