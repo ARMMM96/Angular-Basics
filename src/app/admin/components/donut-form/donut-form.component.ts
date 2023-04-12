@@ -71,6 +71,7 @@ import { Component, OnInit } from '@angular/core';
   `,
   styles: [
     ` 
+   
     .donut-form{
       &-radios{
         display:flex;
