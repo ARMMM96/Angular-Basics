@@ -36,7 +36,7 @@ export class DonutListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.donuts = this.donutService.donuts;
+    this.donuts = this.donutService.read();
   }
   trackById(index: number, value: Donut) {
     return value.id;
