@@ -1,6 +1,6 @@
 export interface Donut {
 
-    id: string;
+    id?: string;
     name: string;
     icon: string;
     price: number;
