@@ -2,10 +2,9 @@ import { Injectable } from '@angular/core';
 import { Donut } from '../models/donut.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DonutService {
-
   private donuts: Donut[] = [
     {
       id: 'y8z0As',
@@ -13,7 +12,7 @@ export class DonutService {
       icon: 'just-chocolate',
       price: 199,
       promo: 'limited',
-      description: 'For the pure chocoholic.'
+      description: 'For the pure chocoholic.',
     },
     {
       id: '3u98kl',
@@ -21,14 +20,14 @@ export class DonutService {
       icon: 'glazed-fudge',
       price: 129,
       promo: 'new',
-      description: 'Sticky perfection.'
+      description: 'Sticky perfection.',
     },
     {
       id: 'ae098s',
       name: 'Caramel Swirl',
       icon: 'caramel-swirl',
       price: 129,
-      description: 'Chocolate drizzled with caramel.'
+      description: 'Chocolate drizzled with caramel.',
     },
     {
       id: '8amkZ9',
@@ -45,17 +44,14 @@ export class DonutService {
       description: 'Delicious lucious lemon.',
     },
   ];
-  constructor() { }
-
+  constructor() {}
 
   read() {
     return this.donuts;
   }
 
   readOne(id: string) {
-    const donut = this.read().find(
-      (donut: Donut) => donut.id === id
-    )
+    const donut = this.read().find((donut: Donut) => donut.id === id);
 
     if (donut) {
       return donut;
@@ -66,17 +62,20 @@ export class DonutService {
 
   create(payload: Donut) {
     this.donuts = [...this.donuts, payload];
-    console.log(this.donuts)
+    console.log(this.donuts);
   }
   update(payload: Donut) {
     this.donuts = this.donuts.map((donut: Donut) => {
       if (donut.id === payload.id) {
-        return payload
+        return payload;
       }
       return donut;
-    })
-    console.log(this.donuts)
-
+    });
+    console.log(this.donuts);
   }
 
+  delete(payload: Donut) {
+    this.donuts = this.donuts.filter((donut: Donut) => donut.id !== payload.id);
+    console.log(this.donuts);
+  }
 }
