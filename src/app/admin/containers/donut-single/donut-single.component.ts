@@ -6,29 +6,30 @@ import { DonutService } from '../../services/donut.service';
   selector: 'donut-single',
   template: `
     <div>
-      <donut-form [donut]="donut" (create)="onCreate($event)"></donut-form>
+      <donut-form
+        [donut]="donut"
+        (create)="onCreate($event)"
+        (update)="onUpdate($event)"
+      ></donut-form>
     </div>
   `,
-  styles: [
-  ]
+  styles: [],
 })
 export class DonutSingleComponent implements OnInit {
-
   donut!: Donut;
 
-
-  constructor(private donutService: DonutService) { }
+  constructor(private donutService: DonutService) {}
 
   ngOnInit(): void {
-
-    const id = 'l3M0nzs';
+    const id = '8amkZ9';
 
     this.donut = this.donutService.readOne(id);
-
   }
   onCreate(donut: Donut) {
     this.donutService.create(donut);
+  }
 
-  
+  onUpdate(donut: Donut) {
+    this.donutService.update(donut);
   }
 }
