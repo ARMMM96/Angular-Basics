@@ -21,12 +21,14 @@ export class DonutSingleComponent implements OnInit {
 
   ngOnInit(): void {
 
-    const id = 'l3M0nz';
+    const id = 'l3M0nzs';
 
     this.donut = this.donutService.readOne(id);
 
   }
   onCreate(donut: Donut) {
-    console.log('onCreate', donut)
+    this.donutService.create(donut);
+
+  
   }
 }

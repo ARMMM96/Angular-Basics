@@ -108,8 +108,6 @@ import { Donut } from '../../models/donut.model';
           working....
       </div>
 
-      <pre>{{ donut | json}}</pre>
-      <pre>{{ form.value | json}}</pre>
     </form>
   `,
   styles: [
