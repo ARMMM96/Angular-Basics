@@ -1,14 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-
 import {
-  tap,
-  of,
-  map,
-  catchError,
-  throwError,
-  retry,
-} from 'rxjs';
+  HttpClient,
+  HttpErrorResponse,
+  HttpHeaders,
+} from '@angular/common/http';
+
+import { tap, of, map, catchError, throwError, retry } from 'rxjs';
 
 import { Donut } from '../models/donut.model';
 
@@ -23,7 +20,16 @@ export class DonutService {
     if (this.donuts.length) {
       return of(this.donuts);
     }
-    return this.http.get<Donut[]>(`/api/donuts`).pipe(
+
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    headers = headers.append('Api-Token', '1234563asd');
+    const options = {
+      headers,
+    };
+
+    return this.http.get<Donut[]>(`/api/donuts`, options).pipe(
       tap((donuts) => {
         this.donuts = donuts;
       }),
