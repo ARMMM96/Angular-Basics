@@ -37,27 +37,6 @@
       "icon": "zesty-lemon",
       "price": 129,
       "description": "Delicious lucious lemon."
-    },
-    {
-      "name": "asdas",
-      "icon": "glazed-fudge",
-      "price": 123,
-      "description": "wsdasd",
-      "id": "U2dqRyS"
-    },
-    {
-      "name": "asdas",
-      "icon": "glazed-fudge",
-      "price": 123,
-      "description": "wsdasd",
-      "id": "HU5y3ZT"
-    },
-    {
-      "name": "asdas",
-      "icon": "glazed-fudge",
-      "price": 123,
-      "description": "wsdasd",
-      "id": "0VfMexK"
     }
   ]
 }
