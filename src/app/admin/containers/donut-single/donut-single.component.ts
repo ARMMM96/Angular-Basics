@@ -24,7 +24,7 @@ export class DonutSingleComponent implements OnInit {
   ngOnInit(): void {
     const id = '8amkZ9';
 
-    this.donut = this.donutService.readOne(id);
+    // this.donut = this.donutService.readOne(id);
   }
   onCreate(donut: Donut) {
     this.donutService.create(donut);
