@@ -4,7 +4,7 @@
       "id": "y8z0As",
       "name": "Just Chocolate",
       "icon": "just-chocolate",
-      "price": 199,
+      "price": 195,
       "promo": "limited",
       "description": "For the pure chocoholic."
     },
@@ -12,7 +12,7 @@
       "id": "3u98kl",
       "name": "Glazed Fudge",
       "icon": "glazed-fudge",
-      "price": 129,
+      "price": 167,
       "promo": "new",
       "description": "Sticky perfection."
     },
@@ -35,8 +35,15 @@
       "id": "l3M0nz",
       "name": "Zesty Lemon",
       "icon": "zesty-lemon",
-      "price": 129,
+      "price": 130,
       "description": "Delicious lucious lemon."
+    },
+    {
+      "name": "Testing",
+      "icon": "just-chocolate",
+      "price": 123,
+      "description": "Something",
+      "id": "JNeIxDO"
     }
   ]
 }
