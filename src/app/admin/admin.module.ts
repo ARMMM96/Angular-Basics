@@ -23,7 +23,7 @@ export const routes: Routes = [
     component: DonutSingleComponent,
     data: { isEdit: true },
   },
-  { path: '', pathMatch: 'full', redirectTo: 'donut' },
+  { path: '', pathMatch: 'full', redirectTo: 'donuts' },
 ];
 
 @NgModule({
