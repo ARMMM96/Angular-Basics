@@ -10,11 +10,17 @@ import { DonutSingleComponent } from './admin/containers/donut-single/donut-sing
 
 export const routes: Routes = [
   {
-    path: '',
+    path: 'admin',
     children: [
       { path: 'donuts', component: DonutListComponent },
-      { path: 'donut', component: DonutSingleComponent }
+      { path: 'donut', component: DonutSingleComponent },
+      { path: '', pathMatch: 'full', redirectTo: 'donut' },
     ],
+  },
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'admin/donuts',
   },
 ];
 
