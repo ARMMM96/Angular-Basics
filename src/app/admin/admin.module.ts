@@ -13,8 +13,16 @@ import { DonutFormComponent } from './components/donut-form/donut-form.component
 
 export const routes: Routes = [
   { path: 'donuts', component: DonutListComponent },
-  { path: 'donuts/new', component: DonutSingleComponent },
-  { path: 'donuts/:id', component: DonutSingleComponent },
+  {
+    path: 'donuts/new',
+    component: DonutSingleComponent,
+    data: { isEdit: false },
+  },
+  {
+    path: 'donuts/:id',
+    component: DonutSingleComponent,
+    data: { isEdit: true },
+  },
   { path: '', pathMatch: 'full', redirectTo: 'donut' },
 ];
 
@@ -25,10 +33,6 @@ export const routes: Routes = [
     DonutCardComponent,
     DonutFormComponent,
   ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    RouterModule.forChild(routes),
-  ],
+  imports: [CommonModule, FormsModule, RouterModule.forChild(routes)],
 })
 export class AdminModule {}
