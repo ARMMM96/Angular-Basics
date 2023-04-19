@@ -14,8 +14,7 @@ import { Donut } from '../../models/donut.model';
           class="input"
           required
           minlength="5"
-          [ngModel]="donut.name"
-          ngModel
+          [ngModel]="donut?.name"
           [ngModelOptions]="{ updateOn: 'blur' }"
           #name="ngModel"
         />
@@ -141,7 +140,7 @@ import { Donut } from '../../models/donut.model';
       </button>
       <button
         type="button"
-        class="btn btn--gray"
+        class="btn btn--grey"
         *ngIf="form.touched || isEdit"
         (click)="form.resetForm()"
       >
