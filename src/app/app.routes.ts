@@ -3,14 +3,14 @@ import { importProvidersFrom } from '@angular/core';
 import { Routes } from '@angular/router';
 
 
-import { DonutService } from './admin/services/donut.service';
+
 
 export const AppRoutes: Routes = [
   {
     path: 'admin',
     loadChildren: () =>
       import('./admin/admin.routes').then((x) => x.AdminRoutes),
-    providers: [importProvidersFrom(HttpClientModule), DonutService],
+    providers: [importProvidersFrom(HttpClientModule) /* Donuts Service*/],
   },
   {
     path: '',

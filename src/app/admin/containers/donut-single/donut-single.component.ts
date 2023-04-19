@@ -8,6 +8,7 @@ import { DonutFormComponent } from '../../components/donut-form/donut-form.compo
 @Component({
   standalone: true,
   imports: [DonutFormComponent],
+  providers: [DonutService],
   selector: 'donut-single',
   template: `
     <div>
