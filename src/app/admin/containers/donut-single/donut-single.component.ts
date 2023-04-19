@@ -32,8 +32,6 @@ export class DonutSingleComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
 
-
-
     this.donutService
       .readOne(id)
       .subscribe((donut: Donut) => (this.donut = donut));
@@ -43,7 +41,9 @@ export class DonutSingleComponent implements OnInit {
   onCreate(donut: Donut) {
     this.donutService
       .create(donut)
-      .subscribe((donut) => this.router.navigate(['admin', 'donuts',donut.id]));
+      .subscribe((donut) =>
+        this.router.navigate(['admin', 'donuts', donut.id])
+      );
   }
 
   onUpdate(donut: Donut) {
