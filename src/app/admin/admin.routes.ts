@@ -11,7 +11,7 @@ import { DonutSingleComponent } from './containers/donut-single/donut-single.com
 import { DonutCardComponent } from './components/donut-card/donut-card.component';
 import { DonutFormComponent } from './components/donut-form/donut-form.component';
 
-export const routes: Routes = [
+export const AdminRoutes: Routes = [
   { path: 'donuts', component: DonutListComponent },
   {
     path: 'donuts/new',
@@ -26,7 +26,7 @@ export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'donuts' },
 ];
 
-@NgModule({
+/* @NgModule({
   declarations: [
     DonutListComponent,
     DonutSingleComponent,
@@ -36,3 +36,4 @@ export const routes: Routes = [
   imports: [CommonModule, FormsModule, RouterModule.forChild(routes)],
 })
 export class AdminModule {}
+ */
